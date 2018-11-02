@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cuenta un cuento</title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/logo/swipl.ico">
+	<link rel="stylesheet" href="interfazProlog.css">
+</head>
+<body>
+	<header>
+		<img id="logo" src="img/logo/swipl.png" alt="SWI Prolog logo">
+		<h1>CUENTA UN CUENTO</h1>
+	</header>
+	
+	<main class="flex-container">
+		<div class="flex-sides">
+		<h2>Entrada</h2>
+			<form class="form" action="">
+				<b>Cantidad de Personajes</b> <br>
+				<ul>
+					<li>
+						<label>	
+							<input type="radio" name="cantidad" id="dos" value="dos" checked>
+							<img src="img/cantidad/dos.png" alt="">
+						</label>	
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="cantidad" id="tres" value="tres">
+							<img src="img/cantidad/tres.png" alt="">
+						</label>
+					</li>					
+					<li>
+						<label>
+							<input type="radio" name="cantidad" id="cuatro" value="cuatro">
+							<img src="img/cantidad/cuatro.png" alt="">
+						</label>
+					</li>
+				</ul>
+
+				<br><br>	
+
+				<div class="roles">
+					<b>Roles</b> <br>
+					<ul>
+						<li>
+							<input type="checkbox" name="rol1" id="rol1" value="hombre" checked>
+							<label for="rol1"><img src="img/roles/heroe.png" alt="heroe"></label>
+						</li>
+						<li>
+							<input type="checkbox" name="rol2" id="rol2" value="mujer">
+							<label for="rol2"><img src="img/roles/mujer.jpg" alt="mujer"></label>
+						</li>
+						<li>
+							<input type="checkbox" name="rol3" id="rol3" value="villano">
+							<label for="rol3"><img src="img/roles/villano.jpg" alt="villano"></label>
+						</li>
+						<li>
+							<input type="checkbox" name="rol4" id="rol4" value="niña">
+							<label for="rol4"><img src="img/roles/niños.png" alt="niños" id ="niños"></label>						
+						</li>
+					</ul>
+				</div>
+
+				<br><br>
+
+				<b>Lugar</b> <br>
+				<ul>
+					<li>
+						<label>					
+							<input type="radio" name="lugar" value="bosque" checked>
+							<img src="img/lugar/bosque.jpg" alt="bosque">
+						</label>
+					</li>
+					<li>
+						<label>					
+							<input type="radio" name="lugar" value="castillo">
+							<img src="img/lugar/castillo.jpg" alt="castillo">
+						</label>
+					</li>
+					<li>
+						<label>					
+							<input type="radio" name="lugar" value="pantano">
+							<img src="img/lugar/pantano.jpg" alt="pantano">
+						</label>
+					</li>
+					<li>
+						<label>					
+							<input type="radio" name="lugar" value="isla">
+							<img src="img/lugar/isla.jpg" alt="isla">
+						</label>
+					</li>
+				</ul>
+				<div id="enviar">
+					<input type="submit" value="Enviar">
+				</div>
+			</form>
+		</div>
+
+		<div class="flex-sides">	
+			<h2>Salida</h2>
+			<textarea name="cuento" id="salida" cols="30" rows="10" readonly>Habia una vez...</textarea>
+		</div>
+	</main>
+
+	<footer>
+		<p>
+			Creado el 01 de noviembre del 2018
+		</p>
+		<b>Autores:</b>
+		<ul>
+			<li>Alejandro Gibran Pérez Pérez</li>
+			<li>Jeni Karina Molina Puc</li>
+			<li>Hector Raul Gomez Aranda</li>
+			<li>José Misael Guzman Toloza</li>
+		</ul>
+	</footer>	
+</body>
+</html>
