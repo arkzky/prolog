@@ -147,3 +147,10 @@ footer{
 #enviar{
 	text-align: center;
 }
+
+.lugares label img{
+  height: 275px;
+  width: 275px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
