@@ -63,6 +63,13 @@ figcaption{
   transform: scale(0);
 }
 
+.lugares label img{
+  height: 275px;
+  width: 275px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
 input[type=radio] { 
   position: absolute;
   opacity: 0;
@@ -148,9 +155,3 @@ footer{
 	text-align: center;
 }
 
-.lugares label img{
-  height: 275px;
-  width: 275px;
-  transition-duration: 0.2s;
-  transform-origin: 50% 50%;
-}
