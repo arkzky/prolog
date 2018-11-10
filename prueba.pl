@@ -1,1 +1,0 @@
-test :- write("Prolog \nfue llamado \ndesde PHP \nsatisfactoriamente.").

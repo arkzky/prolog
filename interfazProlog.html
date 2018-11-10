@@ -16,54 +16,30 @@
 		<div class="flex-sides">
 		<h2>Entrada</h2>
 			<form class="form" action="">
-				<!-- <b>Cantidad de Personajes</b> <br>
-				<ul>
-					<li>
-						<label>	
-							<input type="radio" name="cantidad" id="dos" value="dos" checked>
-							<img src="img/cantidad/dos.png" alt="">
-						</label>	
-					</li>
-					<li>
-						<label>
-							<input type="radio" name="cantidad" id="tres" value="tres">
-							<img src="img/cantidad/tres.png" alt="">
-						</label>
-					</li>					
-					<li>
-						<label>
-							<input type="radio" name="cantidad" id="cuatro" value="cuatro">
-							<img src="img/cantidad/cuatro.png" alt="">
-						</label>
-					</li>
-				</ul>
 
-				<br><br>	 -->
-
-				<div class="roles">
+				<div class="seleccion">
 					<b>Roles</b> <br>
+					<p>Seleccione al menos 2, pero no más de 3</p>
 					<ul>
 						<li>
-							<input type="checkbox" name="rol1" id="rol1" value="hombre" checked>
+							<input class="chk_individual" type="checkbox" name="rol1" id="rol1" value="hombre" checked>
 							<label for="rol1"><img src="img/roles/heroe.png" alt="heroe"></label>
 						</li>
 						<li>
-							<input type="checkbox" name="rol2" id="rol2" value="mujer">
+							<input class="chk_individual" type="checkbox" name="rol2" id="rol2" value="mujer" checked>
 							<label for="rol2"><img src="img/roles/mujer.jpg" alt="mujer"></label>
 						</li>
 						<li>
-							<input type="checkbox" name="rol3" id="rol3" value="villano">
+							<input class="chk_individual" type="checkbox" name="rol3" id="rol3" value="villano">
 							<label for="rol3"><img src="img/roles/villano.jpg" alt="villano"></label>
 						</li>
 						<li>
-							<input type="checkbox" name="rol4" id="rol4" value="niña">
+							<input class="chk_individual" type="checkbox" name="rol4" id="rol4" value="niña">
 							<label for="rol4"><img src="img/roles/niños.png" alt="niños" id ="niños"></label>						
 						</li>
 					</ul>
 				</div>
-
-				<br><br>
-				<div class="lugares">
+				<!-- <div class="lugares">
 					<b>Lugar</b> <br>
 					<ul>
 						<li>
@@ -80,8 +56,8 @@
 						</li>
 						<li>
 							<label>					
-								<input type="radio" name="lugar" value="pantano">
-								<img src="img/lugar/pantano.jpg" alt="pantano">
+								<input type="radio" name="lugar" value="pueblo">
+								<img src="img/lugar/pueblo.jpg" alt="pueblo">
 							</label>
 						</li>
 						<li>
@@ -90,41 +66,127 @@
 								<img src="img/lugar/isla.jpg" alt="isla">
 							</label>
 						</li>
+						<li>
+							<label>					
+								<input type="radio" name="lugar" value="desierto">
+								<img src="img/lugar/desierto.jpg" alt="desierto">
+							</label>
+						</li>
+					</ul>
+				</div> -->
+
+				<!-- Container for the image gallery -->
+				<b>Lugar</b> <br><br>
+				<div class="container">
+
+				  <!-- Full-width images with number text -->
+				  <div class="mySlides">
+				    <div class="numbertext">1 / 5</div>
+				      <img src="img/lugar/slideshow/img_woods_wide.jpg" style="width:100%">
+				  </div>
+
+				  <div class="mySlides">
+				    <div class="numbertext">2 / 5</div>
+				      <img src="img/lugar/slideshow/img_5terre_wide.jpg" style="width:100%">
+				  </div>
+
+				  <div class="mySlides">
+				    <div class="numbertext">3 / 5</div>
+				      <img src="img/lugar/slideshow/img_mountains_wide.jpg" style="width:100%">
+				  </div>
+
+				  <div class="mySlides">
+				    <div class="numbertext">4 / 5</div>
+				      <img src="img/lugar/slideshow/img_lights_wide.jpg" style="width:100%">
+				  </div>
+
+				  <div class="mySlides">
+				    <div class="numbertext">5 / 5</div>
+				      <img src="img/lugar/slideshow/img_nature_wide.jpg" style="width:100%">
+				  </div>
+
+				  <!-- Next and previous buttons -->
+				  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+				  <!-- Image text -->
+				  <div class="caption-container">
+				    <p id="caption"></p>
+				  </div>
+
+				  <!-- Thumbnail images -->
+				  <div class="row">
+				    <div class="column">
+					    <label>
+						 	<input type="radio" name="lugar" value="bosque" checked>
+					      	<img class="demo cursor" src="img/lugar/slideshow/img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="Bosque">
+					    </label>
+				    </div>
+				    <div class="column"> 
+				      	<label>
+					    	<input type="radio" name="lugar" value="pueblo">
+					    	<img class="demo cursor" src="img/lugar/slideshow/img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Pueblo">
+				      	</label>
+				    </div>
+				    <div class="column">
+				    	<label>
+				    		<input type="radio" name="lugar" value="castillo">
+					      	<img class="demo cursor" src="img/lugar/slideshow/img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Castillo">
+				    	</label>
+				    </div>
+				    <div class="column">
+				    	<label>
+				    		<input type="radio" name="lugar" value="isla">
+						    <img class="demo cursor" src="img/lugar/slideshow/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Isla">
+				    	</label>
+				    </div>
+				    <div class="column">
+				    	<label>
+				    		<input type="radio" name="lugar" value="desierto">
+				    		<img class="demo cursor" src="img/lugar/slideshow/img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Desierto">
+				    	</label>
+				    </div>
+				  </div>
+				</div>
+				
+				<br>
+
+				<b>Finales</b> <br>
+				<div class="seleccion">
+					<ul>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="alegre" checked>
+								<img src="img/finales/alegre.png" alt="alegre">
+							</label>
+						</li>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="comico">
+								<img src="img/finales/comico.png" alt="comico">
+							</label>
+						</li>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="inesperado">
+								<img src="img/finales/inesperado.png" alt="inesperado">
+							</label>
+						</li>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="tragico">
+								<img src="img/finales/tragico.png" alt="tragico">
+							</label>
+						</li>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="triste">
+								<img src="img/finales/triste.png" alt="triste">
+							</label>
+						</li>
 					</ul>
 				</div>
-				<b>Finales</b> <br>
-				<ul>
-					<li>
-						<label>					
-							<input type="radio" name="final" value="alegre" checked>
-							<img src="img/finales/alegre.png" alt="alegre">
-						</label>
-					</li>
-					<li>
-						<label>					
-							<input type="radio" name="final" value="comico">
-							<img src="img/finales/comico.png" alt="comico">
-						</label>
-					</li>
-					<li>
-						<label>					
-							<input type="radio" name="final" value="inesperado">
-							<img src="img/finales/inesperado.png" alt="inesperado">
-						</label>
-					</li>
-					<li>
-						<label>					
-							<input type="radio" name="final" value="tragico">
-							<img src="img/finales/tragico.png" alt="tragico">
-						</label>
-					</li>
-					<li>
-						<label>					
-							<input type="radio" name="final" value="triste">
-							<img src="img/finales/triste.png" alt="triste">
-						</label>
-					</li>
-				</ul>
+
 				<div id="enviar">
 					<input type="submit" value="Enviar">
 				</div>
@@ -141,13 +203,15 @@
 		<p>
 			Creado el 01 de noviembre del 2018
 		</p>
-		<b>Autores:</b>
-		<ul>
-			<li>Alejandro Gibran Pérez Pérez</li>
-			<li>Jeni Karina Molina Puc</li>
-			<li>Hector Raul Gomez Aranda</li>
-			<li>José Misael Guzman Toloza</li>
-		</ul>
+		<b>Autores</b>	<br>
+		<div class="fila">
+			<div class="nombre">Hector Raul Gomez Aranda</div>
+			<div class="nombre">José Misael Guzman Toloza</div>
+			<div class="nombre">Jeni Karina Molina Puc</div>
+			<div class="nombre">Alejandro Gibran Pérez Pérez</div>	
+		</div>
 	</footer>	
+	<script src="jquery-3.3.1.js"></script>
+	<script src="funciones.js"></script>
 </body>
 </html>
