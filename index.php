@@ -4,9 +4,49 @@
 	<meta charset="UTF-8">
 	<title>Cuenta un cuento</title>
 	<link rel="shortcut icon" type="image/x-icon" href="img/logo/swipl.ico">
-	<link rel="stylesheet" href="interfazProlog.css">
+	<link rel="stylesheet" type="text/css" href="interfazProlog.css">
 </head>
 <body>
+	<?php
+		$rol1="";
+		$rol2="";
+		$rol3="";
+		$rol4="";
+		$output="Habia una vez...";
+
+		if(isset($_POST["rol1"]))
+		{
+			$rol1="juan,";
+		}
+		if(isset($_POST["rol2"]))
+		{
+			$rol2="maria,";
+		}
+		if(isset($_POST["rol3"]))
+		{
+			$rol3="hombre_lobo,";
+		}
+		if(isset($_POST["rol4"]))
+		{
+			$rol4="niños,";
+		}
+
+		
+		$escenario = (!empty($_POST['lugar']) ? $_POST['lugar'] : null);
+
+		$final     = (!empty($_POST['final']) ? $_POST['final'] : null);
+
+		// echo "cuento($rol1$rol2$rol3$escenario) <br>	";
+		if(!$final == null){
+			$funcion = "cuento($rol1$rol2$rol3$escenario)";
+			$output = `swipl -s Cuento2jeni.pl -g "$funcion" -t halt`;
+
+			if($output == "")
+			{
+				$output = "Esta historia no la conozco (ಥ_ಥ )";
+			}
+		}
+	?>
 	<header>
 		<img id="logo" src="img/logo/swipl.png" alt="SWI Prolog logo">
 		<h1>CUENTA UN CUENTO</h1>
@@ -15,14 +55,14 @@
 	<main class="flex-container">
 		<div class="flex-sides">
 		<h2>Entrada</h2>
-			<form class="form" method="POST" action="servidor.php">
+			<form class="form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
 				<div class="seleccion">
 					<b>Roles</b> <br>
 					<p>Seleccione al menos 2, pero no más de 3</p>
 					<ul>
 						<li>
-							<input class="chk_individual" type="checkbox" name="rol1" id="rol1" value="heroe" checked>
+							<input class="chk_individual" type="checkbox" name="rol1" id="rol1" value="hombre" checked>
 							<label for="rol1"><img src="img/roles/heroe.png" alt="heroe"></label>
 						</li>
 						<li>
@@ -41,7 +81,7 @@
 				</div>
 
 				<!-- Container for the image gallery -->
-				<b>Escenarios</b> <br><br>
+				<b>Lugar</b> <br><br>
 				<div class="container">
 
 				  <!-- Full-width images with number text -->
@@ -160,7 +200,7 @@
 
 		<div class="flex-sides">	
 			<h2>Salida</h2>
-			<textarea name="cuento" id="salida" cols="30" rows="10" readonly>Habia una vez...</textarea>
+			<textarea name="cuento" id="salida" cols="30" rows="10" readonly><?php echo $output;?></textarea>
 		</div>
 	</main>
 

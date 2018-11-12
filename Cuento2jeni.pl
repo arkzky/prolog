@@ -1,30 +1,12 @@
-cazador(arturo).
-cazador(juan).
-cazador(pedro).
-cazador(chris).
-cazador(manuel).
-cazador(josue).
+%% Hechos necesarios
+heroe(oscar,valiente).
+heroe(juan,valiente).
+heroe(erick,fuerte).
+heroe(francisco,comelon).
+heroe(luis,dormilon).
+heroe(carlos,campesino).
+heroe(juan).
 
-villano(hombre_lobo, carnivoro).
-villano(momia, no_carnivoro).
-villano(bruja,fea).
-villano(vampiro,chupasangre).
-villano(ladron,malvado).
-villano(mujer_lobo,carnivora).
-
-niña(mabel).
-niña(rosita).
-niña(marisol).
-niña(rocio).
-niña(carla).
-niña(perla).
-
-hada(campanita).
-hada(jeni).
-hada(patricia).
-hada(susi).
-hada(joceline).
-hada(arieny).
 
 reina(ella, bonita).
 reina(isabel, fea).
@@ -40,12 +22,19 @@ princesa(soledad).
 princesa(estefania).
 princesa(carolina).
 
-heroe(oscar,valiente).
-heroe(juan,valiente).
-heroe(erick,fuerte).
-heroe(francisco,comelon).
-heroe(luis,dormilon).
-heroe(carlos,campesino).
+villano(hombre_lobo, carnivoro).
+villano(momia, no_carnivoro).
+villano(bruja,fea).
+villano(vampiro,chupasangre).
+villano(ladron,malvado).
+villano(mujer_lobo,carnivora).
+
+niÃ±a(mabel).
+niÃ±a(rosita).
+niÃ±a(marisol).
+niÃ±a(rocio).
+niÃ±a(carla).
+niÃ±a(perla).
 
 tiene_arboles(bosque).
 tiene_animales(bosque).
@@ -53,44 +42,71 @@ asusta(bosque).
 es_grande(castillo).
 es_bonito(castillo).
 
+%% Hechos extra
+cazador(arturo).
+cazador(juan).
+cazador(pedro).
+cazador(chris).
+cazador(manuel).
+cazador(josue).
+
+hada(campanita).
+hada(jeni).
+hada(patricia).
+hada(susi).
+hada(joceline).
+hada(arieny).
+
+
+
+
 /*Reglas Modelo de Mundo*/
 
-lo_mata(Hombre,Monstruo):-
+cazador_muere(Hombre,Monstruo,Lugar):-
     cazador(Hombre),
-    villano(Monstruo,carnivoro).
+    villano(Monstruo,carnivoro),
+    es_bosque(Lugar).
 
-sobrevive(Mujer,Niña):-
+sobrevive(Mujer,NiÃ±a):-
     hada(Mujer),
-    reina(Niña,bonita). %a lo mejor hacer una condicion de Niña(Niña). algo asi
+    reina(NiÃ±a,bonita). %a lo mejor hacer una condicion de NiÃ±a(NiÃ±a). algo asi
 
-/*Reglas Conocimiento Planificación*/
+
+/*Reglas Conocimiento PlanificaciÃ³n*/
 %Hombre mujer castillo y tiene que decir que final
-cuento_prueba(Hombre,Mujer,Monstruo,Lugar):- cazador(Hombre),
-                             princesa(Mujer),
-                             es_bosque(Lugar),
-                             se_casan(Mujer,Hombre),
-                             write("El principe cazador "),write(Hombre), write(" y la princesa "),write(Mujer),write(" se casan felizmente con todos sus familiares en el "),write(Lugar);
+cuento(Hombre,Mujer,Lugar):-  
+                            cazador(Hombre),
+                            princesa(Mujer),
+                            es_castillo(Lugar),
+                            se_casan(Mujer,Hombre),
+                            write("El principe cazador "),write(Hombre), write(" y la princesa "),write(Mujer),write(" se casan felizmente con todos sus familiares en el "),write(Lugar).
 
-                             villano(Monstruo,carnivoro),
-                               es_castillo(Lugar),
-                               ganan(Hombre,Monstruo),
-                               write("El cazador "), write(Hombre), write(" venció al horrible villano  "), write(Monstruo), write(", mata al villano, gana la batalla y se queda a vivir en el "), write(Lugar).
+cuento(Hombre,Monstruo,Lugar):- 
+                            cazador(Hombre),
+                            villano(Monstruo,carnivoro),
+                            es_castillo(Lugar),
+                            ganan(Hombre,Monstruo),
+                            write("El cazador "), write(Hombre), write(" venciÃ³ al horrible villano  "), write(Monstruo ), write(", mata al villano, gana la batalla y se queda a vivir en el "), write(Lugar).
 
-cuento_prueba2(Hombre,Monstruo,Lugar):- cazador(Hombre),
-                               villano(Monstruo,carnivoro),
-                               es_castillo(Lugar),
-                               ganan(Hombre,Monstruo),
-                               write("El cazador "), write(Hombre), write(" venció al horrible villano  "), write(Monstruo ), write(", mata al villano, gana la batalla y se queda a vivir en el "), write(Lugar).
+cuento(Hombre,Mujer,Monstruo,Lugar):-                               
+                            princesa(Mujer),
+                            no_son_felices(Hombre,Monstruo,Lugar),
+                            write("El cazador "), write(Hombre), write(" fue devorado por el "), write(Monstruo ), write(" por haber estado en el "), write(Lugar), write(" y la mujer "), write(Mujer), write(" queda viuda").
 
+                          
 
 
 se_casan(Mujer,Principe):-
     princesa(Mujer),
     heroe(Principe,valiente).
 
-no_son_felices(Mujer,Niña):-
+no_son_felices(Hombre,Monstruo,Lugar):-
+    cazador_muere(Hombre,Monstruo,Lugar).
+
+
+no_son_felices(Hombre,Mujer,Monstruo):-
     madrastra(Mujer,malvada),
-    hija(Niña).
+    hija(NiÃ±a).
 
 ganan(Hombre,Monstruo):-
     cazador(Hombre),
