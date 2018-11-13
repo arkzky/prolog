@@ -32,7 +32,7 @@ function showSlides(n) {
 
 //Limitadores de selecciones minimas y maximas de los Checkboxes
 $('input[type=checkbox]').change(function(e){
-   if ($('input[type=checkbox]:checked').length > 3) {
+   if ($('input[type=checkbox]:checked').length > 4) {
         $(this).prop('checked', false);
    }
 })

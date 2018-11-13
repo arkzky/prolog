@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es_MX">
 <head>
 	<meta charset="UTF-8">
 	<title>Cuenta un cuento</title>
@@ -8,6 +8,7 @@
 </head>
 <body>
 	<?php
+		// header('Content-Type: text/html; charset=ISO-8859-1');
 		$rol1="";
 		$rol2="";
 		$rol3="";
@@ -36,10 +37,10 @@
 
 		$final     = (!empty($_POST['final']) ? $_POST['final'] : null);
 
-		// echo "cuento($rol1$rol2$rol3$escenario) <br>	";
+		// echo "cuento(($rol1$rol2$rol3$escenario,$final) <br>";
 		if(!$final == null){
-			$funcion = "cuento($rol1$rol2$rol3$escenario)";
-			$output = `swipl -s Cuento2jeni.pl -g "$funcion" -t halt`;
+			$funcion = "cuento($rol1$rol2$rol3$escenario,$final)";
+			$output = `swipl -s CuentoversionAlex.pl -g "$funcion" -t halt`;
 
 			if($output == "")
 			{
@@ -74,8 +75,12 @@
 							<label for="rol3"><img src="img/roles/villano.jpg" alt="villano"></label>
 						</li>
 						<li>
-							<input class="chk_individual" type="checkbox" name="rol4" id="rol4" value="niños">
-							<label for="rol4"><img src="img/roles/niños.png" alt="niños" id ="niños"></label>						
+							<input class="chk_individual" type="checkbox" name="rol4" id="rol4" value="niña">
+							<label for="rol4"><img src="img/roles/ninia.png" alt="niña" id ="niña"></label>						
+						</li>
+						<li>
+							<input class="chk_individual" type="checkbox" name="rol5" id="rol5" value="niño">
+							<label for="rol5"><img src="img/roles/ninio.png" alt="niño" id ="niño"></label>						
 						</li>
 					</ul>
 				</div>
@@ -173,8 +178,8 @@
 						</li>
 						<li>
 							<label class="radioBtn">					
-								<input type="radio" name="final" value="inesperado">
-								<img src="img/finales/inesperado.png" alt="inesperado">
+								<input type="radio" name="final" value="sorpresa">
+								<img src="img/finales/inesperado.png" alt="sorpresa">
 							</label>
 						</li>
 						<li>
