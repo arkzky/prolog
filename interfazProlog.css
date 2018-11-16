@@ -113,7 +113,7 @@ input[type=button], input[type=submit], input[type=reset] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    font-size: large;
+    font-size: larger;
 }
 
 textarea {
@@ -152,21 +152,20 @@ footer{
 	/*background-color: green;*/
 }
 
-/*.fila:after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.nombre{
-  width: 25%;
-  float: left;
-}
-*/
 #enviar{
 	text-align: center;
 }
 
+#puntocoma{
+    background-color: #d30e0e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: large;
+}
 /*SLIDESHOW*/
 
 /* Position the image container (needed to position the left and right arrows) */

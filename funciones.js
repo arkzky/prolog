@@ -42,3 +42,14 @@ $('input[type=checkbox]').change(function(e){
         $(this).prop('checked', true);
    }
 })
+
+// $function miAjax(){
+//   $.ajax({
+//     type: "POST",
+//     url: 'ajax.php',
+//     data:{action: 'llamalo'},
+//     success:function(html){
+//       alert(html);
+//     }
+//   });
+// }

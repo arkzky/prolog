@@ -80,7 +80,6 @@ cuento(Hombre,Mujer,Lugar):-
                             es_castillo(Lugar),
                             se_casan(Mujer,Hombre),
                             write("El principe cazador "),write(Hombre), write(" y la princesa "),write(Mujer),write(" se casan felizmente con todos sus familiares en el "),write(Lugar).
-
 cuento(Hombre,Monstruo,Lugar):- 
                             cazador(Hombre),
                             villano(Monstruo,carnivoro),

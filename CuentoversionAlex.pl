@@ -113,6 +113,19 @@ cuento(Hombre,Mujer,Lugar,Final):-
                             se_casan(Mujer,Hombre),
                             es_alegre(Final),
                             write("Habia una vez dos jovenes, un cazador llamado Juan y una dulce princesa llamada Maria, la cual vivia en un gran Castillo, se conocieron porque Juan fue al castillo y Maria lo saludo, desde ese entonces se volvieron amigos, pero por malos entendidos tuvieron problemas, eso ocasiono que Maria huya, dejando a Juan muy triste, pasaron los dias y Juan perdia la esperanza de que Maria regresara, fue cuando entonces ella regreso, en ese momento ambos se dieron cuenta que no podian vivir sin el otro y que estaban enamorados, entonces decidieron casarse en el hermoso Castillo en le cual Maria vivia. Fin");
+                            cazador(Hombre),
+                            princesa(Mujer),
+                            es_castillo(Lugar),
+                            %hechos intermedios
+                            se_encuentran(Hombre,Mujer),
+                            tienen_problemas(Hombre,Mujer),
+                            huye(Mujer),
+                            esta_triste(Hombre),
+                            regresa(Mujer),
+                            se_enamoran(Hombre,Mujer),
+                            se_casan(Mujer,Hombre),
+                            es_alegre(Final),
+                            write("Habia una vez dos criaturas, un cazador llamado Juan y una dulce princesa llamada Maria, la cual vivia en un gran Castillo, se conocieron porque Juan fue al castillo y Maria lo saludo, desde ese entonces se volvieron amigos, pero por malos entendidos tuvieron problemas, eso ocasiono que Maria huya, dejando a Juan muy triste, pasaron los dias y Juan perdia la esperanza de que Maria regresara, fue cuando entonces ella regreso, en ese momento ambos se dieron cuenta que no podian vivir sin el otro y que estaban enamorados, entonces decidieron casarse en el hermoso Castillo en le cual Maria vivia. Fin");
                             %write("El principe cazador "),write(Hombre), write(" y la princesa "),write(Mujer),write(" se casan felizmente con todos sus familiares en el "),write(Lugar).
                              principe(Hombre),
                              princesa(Mujer),

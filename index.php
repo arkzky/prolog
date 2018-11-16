@@ -39,12 +39,14 @@
 
 		// echo "cuento(($rol1$rol2$rol3$escenario,$final) <br>";
 		if(!$final == null){
-			$funcion = "cuento($rol1$rol2$rol3$escenario,$final)";
+			$funcion = "cuento($rol1$rol2$rol3$escenario,$final),nl,false";
 			$output = `swipl -s CuentoversionAlex.pl -g "$funcion" -t halt`;
+			$separador = preg_split("/\n/", $output);
+			$textarea = $separador[0];
 
 			if($output == "")
 			{
-				$output = "Esta historia no la conozco (ಥ_ಥ )";
+				$output = "Ya no hay más historias (ಥ_ಥ )";
 			}
 		}
 	?>
@@ -205,7 +207,8 @@
 
 		<div class="flex-sides">	
 			<h2>Salida</h2>
-			<textarea name="cuento" id="salida" cols="30" rows="10" readonly><?php echo $output;?></textarea>
+			<button type="submit" id="puntocoma" url="">Historia alternativa</button>
+			<textarea name="cuento" id="salida" cols="30" rows="10" readonly><?php echo $textarea;?></textarea>
 		</div>
 	</main>
 
