@@ -118,7 +118,7 @@ input[type=button], input[type=submit], input[type=reset] {
 
 textarea {
     width: 100%;
-    height: 700px;
+    height: 370px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -152,19 +152,47 @@ footer{
 	/*background-color: green;*/
 }
 
+.olas{
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.olas:active {
+  background-size: 100%;
+  transition: background 0s;
+}
+
 #enviar{
 	text-align: center;
 }
 
+#envio:hover{
+  background: #F2974D radial-gradient(circle, transparent 1%, #F2974D 1%) center/15000%;
+}
+
+#envio:active{
+  background-color: #eaa977;
+}
+
+
 #puntocoma{
-    background-color: #d30e0e;
+    background-color: #f22121;
     border: none;
     color: white;
     padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    font-size: large;
+    font-size: larger;
+    display: none;
+}
+
+#puntocoma:hover{
+  background: #f44646 radial-gradient(circle, transparent 1%, #f44646 1%) center/15000%;
+}
+
+#puntocoma:active{
+    background-color: #f46e6e;
 }
 /*SLIDESHOW*/
 
