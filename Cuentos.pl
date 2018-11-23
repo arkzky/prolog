@@ -370,7 +370,7 @@ etapa1(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
 
                              personaje(Rol1,maria,_),
                              es_infeliz(Rol1),
-                             write(" La mujer era enfeliz en la vida que tenia, la odiaba.");
+                             write(" La mujer era infeliz en la vida que tenia, la odiaba.");
 
                              personaje(Rol1,maria,_),
                              se_pierde(Rol1),
@@ -378,7 +378,7 @@ etapa1(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
 
                              personaje(Rol2,maria,_),
                              es_infeliz(Rol2),
-                             write(" La mujer era enfeliz en la vida que tenia, la odiaba.");
+                             write(" La mujer era infeliz en la vida que tenia, la odiaba.");
 
                              personaje(Rol2,maria,_),
                              se_pierde(Rol2),
