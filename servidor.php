@@ -5,6 +5,7 @@
 	$rol3="c,";
 	$rol4="d,";
 	$rol5="e,";
+	$comodin="f";
 	$output="Habia una vez...";
 
 	if(isset($_POST["rol1"]))
@@ -33,11 +34,15 @@
 	// echo "cuento($rol1$rol2$rol3$rol4$rol5$escenario,$final) <br>";
 	
 	// $funcion = "cuento($rol1$rol2$rol3$rol4$escenario,$final),nl,false";
-	// $funcion = "inicio($rol1$rol2$rol3$rol4$escenario)";
-	$funcion = "final($rol1$rol2$rol3$rol4$final),nl,false";
-	$output = `swipl -s Cuentos.pl -g "$funcion" -t halt`;
-	// $separador = preg_split("/\n/", $output);
-	// $textarea = $separador[0];
+	$fInicio = "inicio($rol1$rol2$rol3$rol4$escenario),write('INICIO')";
+	$inicio = `swipl -s Cuentos.pl -g "$fInicio" -t halt`;
+
+	$funcion_etapas = "etapas($rol1$rol2$rol3$rol4$comodin),write('ETAPAS'),false";
+	$etapas = `swipl -s Cuentos.pl -g "$funcion_etapas" -t halt`;
+
+	$funcion_final = "final($rol1$rol2$rol3$rol4$final),write('FINAL'),false";
+	$final = `swipl -s Cuentos.pl -g "$funcion_final" -t halt`;
+	$output = $inicio.$etapas.$final;
 	
 	if($output == "")
 	{

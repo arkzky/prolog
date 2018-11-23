@@ -105,7 +105,6 @@ inicio(Rol1,Rol2,Rol3,Rol4,Lugar):-personaje(Rol1,juan,principe),
                                               personaje(Rol4,rosita,curiosa),
                                               write("Habia una vez una princesa llamada maria quien vivia con un niño llamado miguel y  una niña llamada rosita, los cuales vivian acechados por un hombre lobo "),
                                               lugar(Lugar);
-                                              
 %% 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
@@ -165,10 +164,9 @@ inicio(Rol1,Rol2,Rol3,Rol4,Lugar):-personaje(Rol1,juan,principe),
                                               personaje(Rol2,miguel,valiente),
                                               personaje(Rol3,rosita,curiosa),
                                               write("Habia una vez 2 niños, uno llamado miguel y otra llamada rosita, ambos coexistian con un hombre lobo "),
-                                              lugar(Lugar); 
-
-%% inicio(Rol1,Rol2,Lugar):-
-personaje(Rol1,juan,principe),
+                                              lugar(Lugar);
+%% 
+                                              personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
                                               write("Habia una vez una princesa llamada maria y un principe llamado juan, ambos vivian "),
                                               lugar(Lugar);
@@ -362,86 +360,382 @@ mueren(Rol1,Rol2):-personaje(Rol1,_,_),
                         write(" mueren. Fin").
 
 
+etapa1(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
+                             busca(Rol1,tesoro),
+                             write(" El hombre estaba animado y parte en busca de un tesoro.");
+
+                             personaje(Rol1,juan,_),
+                             explora(Rol1,llanuras),
+                             write(" El hombre queria explorar asi que sale a explorar las llanuras.");
+
+                             personaje(Rol1,maria,_),
+                             es_infeliz(Rol1),
+                             write(" La mujer era enfeliz en la vida que tenia, la odiaba.");
+
+                             personaje(Rol1,maria,_),
+                             se_pierde(Rol1),
+                             write(" La mujer decide salir a dar un paseo pero se termina perdiendo.");
+
+                             personaje(Rol2,maria,_),
+                             es_infeliz(Rol2),
+                             write(" La mujer era enfeliz en la vida que tenia, la odiaba.");
+
+                             personaje(Rol2,maria,_),
+                             se_pierde(Rol2),
+                             write(" La mujer decide salir a dar un paseo pero se termina perdiendo.");
+
+                             personaje(Rol1,hombre_lobo,_),
+                             planear(Rol1,estrategia),
+                             write(" El villano planeo una estrategia para sus siniestros planes.");
+
+                             personaje(Rol1,hombre_lobo,_),
+                             ataca(Rol1,entorno),
+                             write(" El villano decidio atacar su entorno durante la noche.");
+
+                             personaje(Rol2,hombre_lobo,_),
+                             planear(Rol2,estrategia),
+                             write(" El villano planeo una estrategia para sus siniestros planes.");
+
+                             personaje(Rol2,hombre_lobo,_),
+                             ataca(Rol2,entorno),
+                             write(" El villano decidio atacar su entorno durante la noche.");
+
+                             personaje(Rol3,hombre_lobo,_),
+                             planear(Rol3,estrategia),
+                             write(" El villano planeo una estrategia para sus siniestros planes.");
+
+                             personaje(Rol3,hombre_lobo,_),
+                             ataca(Rol3,entorno),
+                             write(" El villano decidio atacar su entorno durante la noche.");
+
+                             personaje(Rol1,miguel,_),
+                             encontrar(Rol1,pasaje_secreto),
+                             write(" El niño estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
+
+                             personaje(Rol1,miguel,_),
+                             encuentro(Rol1,espada),
+                             write(" El niño encontro una espada guardada muy bien bajo una apertura bajo tierra.");
+
+                             personaje(Rol2,miguel,_),
+                             encontrar(Rol2,pasaje_secreto),
+                             write(" El niño estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
+
+                             personaje(Rol2,miguel,_),
+                             encuentro(Rol2,espada),
+                             write(" El niño encontro una espada guardada muy bien bajo una apertura bajo tierra.");
+
+                             personaje(Rol3,miguel,_),
+                             encontrar(Rol3,pasaje_secreto),
+                             write(" El niño estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
+
+                             personaje(Rol3,miguel,_),
+                             encuentro(Rol3,espada),
+                             write(" El niño encontro una espada guardada muy bien bajo una apertura bajo tierra.");
+
+                             personaje(Rol4,miguel,_),
+                             encontrar(Rol4,pasaje_secreto),
+                             write(" El niño estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
+
+                             personaje(Rol4,miguel,_),
+                             encuentro(Rol4,espada),
+                             write(" El niño encontro una espada guardada muy bien bajo una apertura bajo tierra.");
+                             personaje(Rol2,rosita,_),
+                             entra(Rol2,lugar_extraño),
+                             write(" La niña estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
+
+                             personaje(Rol2,rosita,_),
+                             encuentra(Rol2,amigo_misterioso),
+                             write(" La niña estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.");
+
+                             personaje(Rol3,rosita,_),
+                             entra(Rol3,lugar_extraño),
+                             write(" La niña estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
+
+                             personaje(Rol3,rosita,_),
+                             encuentra(Rol3,amigo_misterioso),
+                             write(" La niña estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.");
+
+                             personaje(Rol4,rosita,_),
+                             entra(Rol4,lugar_extraño),
+                             write(" La niña estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
+
+                             personaje(Rol4,rosita,_),
+                             encuentra(Rol4,amigo_misterioso),
+                             write(" La niña estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.").
+
+etapa2(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
+                             compra(Rol1,espada),
+                             write(" Luego, al encontrar el tesoro, compra una espada.");
+
+                             personaje(Rol1,juan,_),
+                             encuentro_h(Rol1,caballo),
+                             write(" Luego, en ese lugar encontro a un caballo.");
+
+                             personaje(Rol1,maria,_),
+                             escapa2(Rol1,hogar),
+                             write(" Luego, por esos motivos escapa de su hogar en busca de algo nuevo.");
+
+                             personaje(Rol1,maria,_),
+                             hablar(Rol1,animales),
+                             write(" Luego, al no saber que hacer decide hablar con los animales.");
+
+                             personaje(Rol2,maria,_),
+                             escapa2(Rol2,hogar),
+                             write(" Luego, por esos motivos escapa de su hogar en busca de algo nuevo.");
+
+                             personaje(Rol2,maria,_),
+                             hablar(Rol2,animales),
+                             write(" Luego, al no saber que hacer decide hablar con los animales.");
+
+                             personaje(Rol1,hombre_lobo,_),
+                             engañar(Rol1,habitantes),
+                             write(" Luego, en villano engaño a los habitantes para llevar a cabo su plan.");
+
+                             personaje(Rol1,hombre_lobo,_),
+                             roba(Rol1,comida),
+                             write(" Luego, robo mucha comida que habia en ese lugar");
+
+                             personaje(Rol2,hombre_lobo,_),
+                             engañar(Rol2,habitantes),
+                             write(" Luego, el villano engaño a los habitantes para llevar a cabo su plan.");
+
+                             personaje(Rol2,hombre_lobo,_),
+                             roba(Rol2,comida),
+                             write(" Luego, robo mucha comida que habia en ese lugar");
+
+                             personaje(Rol3,hombre_lobo,_),
+                             engañar(Rol3,habitantes),
+                             write(" Luego, el villano engaño a los habitantes para llevar a cabo su plan.");
+
+                             personaje(Rol3,hombre_lobo,_),
+                             roba(Rol3,comida),
+                             write(" Luego, robo mucha comida que habia en ese lugar");
+
+                             personaje(Rol1,miguel,_),
+                             es_atacado(Rol1,goblins),
+                             write(" Luego, el niño fue atacado por unos goblins.");
+
+                             personaje(Rol1,miguel,_),
+                             lastima(Rol1,animal),
+                             write(" Luego, el niño decidio usar la espada pero por accidente lastimo a un animal.");
+
+                             personaje(Rol2,miguel,_),
+                             es_atacado(Rol2,goblins),
+                             write(" Luego, el niño fue atacado por unos goblins.");
+
+                             personaje(Rol2,miguel,_),
+                             lastima(Rol2,animal),
+                             write(" Luego, el niño decidio usar la espada pero por accidente lastimo a un animal.");
+
+                             personaje(Rol3,miguel,_),
+                             es_atacado(Rol3,goblins),
+                             write(" Luego, el niño fue atacado por unos goblins.");
+
+                             personaje(Rol3,miguel,_),
+                             lastima(Rol3,animal),
+                             write(" Luego, el niño decidio usar la espada pero por accidente lastimo a un animal.");
+
+                             personaje(Rol4,miguel,_),
+                             es_atacado(Rol4,goblins),
+                             write(" Luego, el niño fue atacado por unos goblins.");
+
+                             personaje(Rol4,miguel,_),
+                             lastima(Rol4,animal),
+                             write(" Luego, el niño decidio usar la espada pero por accidente lastimo a un animal.");
+
+                             personaje(Rol2,rosita,_),
+                             perderse(Rol2,lugar_extraño),
+                             write(" Luego, al entrar ahi se perdio en el lugar extraño.");
+
+                             personaje(Rol2,rosita,_),
+                             ayuda(Rol2,amigo),
+                             write(" Luego, al volverse amigos se ayudaron entre si.");
+
+                             personaje(Rol3,rosita,_),
+                             perderse(Rol3,lugar_extraño),
+                             write(" Luego, al entrar ahi se perdio en el lugar extraño.");
+
+                             personaje(Rol3,rosita,_),
+                             ayuda(Rol3,amigo),
+                             write(" Luego, al volverse amigos se ayudaron entre si.");
+
+                             personaje(Rol4,rosita,_),
+                             perderse(Rol4,lugar_extraño),
+                             write(" Luego, al entrar ahi se perdio en el lugar extraño.");
+
+                             personaje(Rol4,rosita,_),
+                             ayuda(Rol4,amigo),
+                             write(" Luego, al volverse amigos se ayudaron entre si.").
+
+etapa3(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
+                             cazar(Rol1,animales),
+                             write(" Despues, con la espada se pone a cazar animales.");
+
+                             personaje(Rol1,juan,_),
+                             domar(Rol1,caballo),
+                             write(" Despues, decidio domar al caballo en vez de matarlo.");
+
+                             personaje(Rol1,maria,_),
+                             regresa(Rol1,hogar),
+                             write(" Despues, regresa a su hogar despues de todo lo que ha pasado.");
+
+                             personaje(Rol2,maria,_),
+                             regresa(Rol2,hogar),
+                             write(" Despues, regresa a su hogar despues de todo lo que ha pasado.");
+
+                             personaje(Rol1,hombre_lobo,_),
+                             matar(Rol1,un_vagabundo),
+                             write(" Despues, el villano mato a un vagabundo que paseaba por ahi.");
+
+                             personaje(Rol1,hombre_lobo,_),
+                             escapar(Rol1,comida),
+                             write(" Despues, el villano escapo con la comida y regreso a su hogar.");
+
+                             personaje(Rol2,hombre_lobo,_),
+                             matar(Rol2,un_vagabundo),
+                             write(" Despues, el villano mato a un vagabundo que paseaba por ahi.");
+
+                             personaje(Rol2,hombre_lobo,_),
+                             escapar(Rol2,comida),
+                             write(" Despues, el villano escapo con la comida y regreso a su hogar.");
+
+                             personaje(Rol3,hombre_lobo,_),
+                             matar(Rol3,un_vagabundo),
+                             write(" Despues, el villano mato a un vagabundo que paseaba por ahi.");
+
+                             personaje(Rol3,hombre_lobo,_),
+                             escapar(Rol3,comida),
+                             write(" Despues, el villano escapo con la comida y regreso a su hogar.");
+
+                             personaje(Rol1,miguel,_),
+                             escapo(Rol1,pasaje_secreto),
+                             write(" Despues, por suerte el niño pudo escapar del pasaje secreto.");
+
+                             personaje(Rol1,miguel,_),
+                             regresa_n(Rol1,casa),
+                             write(" Despues de lo que habia pasado, el niño decidio regresar a su casa.");
+                             personaje(Rol2,miguel,_),
+                             escapo(Rol2,pasaje_secreto),
+                             write(" Despues, por suerte el niño pudo escapar del pasaje secreto.");
+
+                             personaje(Rol2,miguel,_),
+                             regresa_n(Rol2,casa),
+                             write(" Despues de lo que habia pasado, el niño decidio regresar a su casa.");
+                             personaje(Rol3,miguel,_),
+                             escapo(Rol3,pasaje_secreto),
+                             write(" Despues, por suerte el niño pudo escapar del pasaje secreto.");
+
+                             personaje(Rol3,miguel,_),
+                             regresa_n(Rol3,casa),
+                             write(" Despues de lo que habia pasado, el niño decidio regresar a su casa.");
+                             personaje(Rol4,miguel,_),
+                             escapo(Rol4,pasaje_secreto),
+                             write(" Despues, por suerte el niño pudo escapar del pasaje secreto.");
+
+                             personaje(Rol4,miguel,_),
+                             regresa_n(Rol4,casa),
+                             write(" Despues de lo que habia pasado, el niño decidio regresar a su casa.");
+                             personaje(Rol2,rosita,_),
+                             escapa(Rol2,lugar_extraño),
+                             write(" Despues, de estar en ese lugar logro escapar sana y salva.");
+
+                             personaje(Rol2,rosita,_),
+                             regreso(Rol2,hogar),
+                             write(" Despues, regreso a su hogar a contar sus aventuras de ese dia.");
+
+                             personaje(Rol3,rosita,_),
+                             escapa(Rol3,lugar_extraño),
+                             write(" Despues, de estar en ese lugar logro escapar sana y salva.");
+
+                             personaje(Rol3,rosita,_),
+                             regreso(Rol3,hogar),
+                             write(" Despues, regreso a su hogar a contar sus aventuras de ese dia.");
+
+                             personaje(Rol4,rosita,_),
+                             escapa(Rol4,lugar_extraño),
+                             write(" Despues, de estar en ese lugar logro escapar sana y salva.");
+
+                             personaje(Rol4,rosita,_),
+                             regreso(Rol4,hogar),
+                             write(" Despues, regreso a su hogar a contar sus aventuras de ese dia.").
+
+etapas(Rol1,Rol2,Rol3,Rol4,Hola):-etapa1(Rol1,Rol2,Rol3,Rol4),
+                             etapa2(Rol1,Rol2,Rol3,Rol4),
+                             etapa3(Rol1,Rol2,Rol3,Rol4).
+
+
 %% Hechos necesarios
 %hombre
-%vive(juan,solo).
-%trabaja(juan,herrero).
-explora(hombre,ruinas).
 busca(hombre,tesoro).
-cazar(hombre,animales).
 compra(hombre,espada).
+cazar(hombre,animales).
+
+explora(hombre,llanuras).
+encuentro_h(hombre,caballo).
 domar(hombre,caballo).
-correr(hombre).
-
-
-%protege(juan,maria).
-%salva(juan,maria).
-%%regresa(juan,maria,padres).
-%%le_pagan(juan,padres).
 
 %princesa
 es_infeliz(mujer).
 escapa2(mujer,hogar).
-se_pierde(mujer).
-se_enveneda(mujer,manzana_envenenada).
-hablar(mujer,animales).
 regresa(mujer,hogar).
 
-
-%%corre_peligro(maria).
-%la_salvan(maria,juan).
-%compra(maria,casa).
-%vive(maria,juan,casa).
+se_pierde(mujer).
+hablar(mujer,animales).
+%regresa de nuevo
+%se_envenena(mujer,manzana_envenenada).
 
 %villano
 planear(villano,estrategia).
 engañar(villano,habitantes).
 matar(villano,un_vagabundo).
+
 ataca(villano,entorno).
-escapar(villano).
 roba(villano,comida).
-%desaparecer(villano).
-
-%niña
-posee(niña,espejo_magico).
-entra(niña,lugar_extraño).
-perderse(niña,lugar_extraño).
-encuentra(niña,amigo).
-la_ayuda(niña,amigo).
-escapa(niña,lugar_extraño).
-%este es de la niña
+escapar(villano,comida).
 
 
-
-%llorar(niña).
-%pedir_ayuda(niña,villano).
-%escapar(niña,villano).
-%encontrar(niña,camino).
-%regresar(niña,padres).
 
 %niño
-encontrar(niño,pasasje_secreto).
+encontrar(niño,pasaje_secreto).
 es_atacado(niño,goblins).
-escapo(niño,goblins).
-encuentro(niño,espada).
-vence(niño,goblins).
-sale(niño,pasaje_secreto).
+escapo(niño,pasaje_secreto).
 
-%encontrar(niño,casa).
-%darse_cuenta(niño,casa,villano).
-%esconderse(niño,villano).
-%robar(niño,arma,villano).
-%escapar(niño,casa).
-%regresar(niño,padres).
+
+encuentro(niño,espada).
+lastima(niño,animal).
+regresa_n(niño,casa).
+%sale(niño,pasaje_secreto).
+
+%niña
+%posee(niña,espejo_magico).
+entra(niña,lugar_extraño).
+perderse(niña,lugar_extraño).
+escapa(niña,lugar_extraño).
+
+encuentra(niña,amigo_misterioso).
+ayuda(niña,amigo).
+regreso(niña,hogar).
+
+
 
 %cuento(Ro1,Rol2,Rol3,Rol4,Rol5)
 cuento(Rol1,Rol2,Rol3,Rol4,Lugar,Final):-inicio(Rol1,Rol2,Rol3,Rol4,Lugar),!,
+                                                   etapa1(Rol1,Rol2,Rol3,Rol4),
+                                                   etapa2(Rol1,Rol2,Rol3,Rol4),
+                                                   etapa3(Rol1,Rol2,Rol3,Rol4),
                                                    final(Rol1,Rol2,Rol3,Rol4,Final);
 
+
                                                     inicio(Rol1,Rol2,Rol3,Lugar),!,
+                                                    etapa1(Rol1,Rol2,Rol3,Rol4),
+                                                    etapa2(Rol1,Rol2,Rol3,Rol4),
+                                                    etapa3(Rol1,Rol2,Rol3,Rol4),
                                                     final(Rol1,Rol2,Rol3,Rol4,Final);
 
                                                     inicio(Rol1,Rol2,Lugar),
+                                                    etapa1(Rol1,Rol2,Rol3,Rol4),
+                                                    etapa2(Rol1,Rol2,Rol3,Rol4),
+                                                    etapa3(Rol1,Rol2,Rol3,Rol4),
 %                                        etapa1(),
 %                                        etapa2(),
 %                                        etapa3(),
