@@ -659,7 +659,7 @@ etapa3(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
                              regreso(Rol4,hogar),
                              write(" Despues, regreso a su hogar a contar sus aventuras de ese dia.").
 
-etapas(Rol1,Rol2,Rol3,Rol4,Hola):-etapa1(Rol1,Rol2,Rol3,Rol4),
+etapas(Rol1,Rol2,Rol3,Rol4):-etapa1(Rol1,Rol2,Rol3,Rol4),
                              etapa2(Rol1,Rol2,Rol3,Rol4),
                              etapa3(Rol1,Rol2,Rol3,Rol4).
 

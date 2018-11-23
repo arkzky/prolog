@@ -50,8 +50,7 @@ var inicio = "";
 var finales;
 var separador;
 var separador_etapas;
-var i = 0;
-var j = 0;
+var i = 0, j = 0, k = 0, l = 0;
 $(".form").submit(function(event) {
   event.preventDefault();
   $.ajax({
@@ -67,9 +66,11 @@ $(".form").submit(function(event) {
     success: function(data){
       separador_inicio = data.split('INICIO');
       inicio = separador_inicio[0];
-      separador_etapas = separador_inicio[1].split('ETAPAS');
-      separador_final = separador_etapas[separador_etapas.length-1].split('FINAL');
-      $('#salida').html(inicio+separador_etapas[0]+separador_final[0]);
+      separador_etapa1 = separador_inicio[separador_inicio.length-1].split('ETAPA1');
+      separador_etapa2 = separador_etapa1[separador_etapa1.length-1].split('ETAPA2');
+      separador_etapa3 = separador_etapa2[separador_etapa2.length-1].split('ETAPA3');
+      separador_final = separador_etapa3[separador_etapa3.length-1].split('FINAL');
+      $('#salida').html(inicio+separador_etapa1[0]+separador_etapa2[0]+separador_etapa3[0]+separador_final[0]);
     }
   });
   // $('#puntocoma').toggle("slide");
@@ -77,18 +78,43 @@ $(".form").submit(function(event) {
   $(window).scrollTop($('#salida').offset().top-200);
   i = 0;
   j = 0;
+  k = 0;
+  l = 0;
 });
 
 $("#puntocoma").click(function(event) {
-  i++;
-  if(i < separador_etapas.length-1)
+  l++;
+  if(l < separador_final.length-1)
   {
-    // j++;
-    if(j < separador_final.length-1)
-    {
-      $('#salida').html(inicio+separador_etapas[i]+separador_final[j]);
-    }
+    $('#salida').html(inicio+separador_etapa1[k]+separador_etapa2[j]+separador_etapa3[k]+separador_final[l]);
+
   }else{
-    $('#salida').html("Ya no hay más historias (ಥ_ಥ )");
+    l = 0;
+    k++;
+    if(k < separador_etapa3.length-1)
+    {
+      $('#salida').html(inicio+separador_etapa1[k]+separador_etapa2[j]+separador_etapa3[k]+separador_final[l]);
+
+    }else{
+      l = 0;
+      k = 0;
+      j++;
+      if(j < separador_etapa2.length-1)
+      {
+        $('#salida').html(inicio+separador_etapa1[k]+separador_etapa2[j]+separador_etapa3[k]+separador_final[l]);
+
+      }else{
+        l = 0;
+        k = 0;
+        j = 0;
+        i++;
+        if( i < separador_etapa1.length-1)
+        {
+          $('#salida').html(inicio+separador_etapa1[k]+separador_etapa2[j]+separador_etapa3[k]+separador_final[l]);
+        }else{
+          $('#salida').html("Ya no hay más historias (ಥ_ಥ )");
+        }
+      }
+    }
   }
 });
