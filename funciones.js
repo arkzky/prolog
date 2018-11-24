@@ -51,12 +51,12 @@ var finales;
 var separador;
 var separador_etapas;
 var i = 0, j = 0, k = 0, l = 0;
-$(".form").submit(function(event) {
-  event.preventDefault();
+$("#envio").click(function(event) {
+  // event.preventDefault();
   $.ajax({
     type: "POST",
     url: 'servidor.php',
-    data:{rol1: $("input[name='rol1']:checked").val(), 
+    data:{rol1: $("input[name='rol1']:checked").val(),  
           rol2: $("input[name='rol2']:checked").val(), 
           rol3: $("input[name='rol3']:checked").val(), 
           rol4: $("input[name='rol4']:checked").val(), 

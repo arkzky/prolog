@@ -2,24 +2,32 @@
 <html lang="es_MX">
 <head>
 	<meta charset="UTF-8">
-	<title>Cuenta un cuento</title>
+	<title>Cuenta un Cuento</title>
 	<link rel="shortcut icon" type="image/x-icon" href="img/logo/swipl.ico">
 	<link rel="stylesheet" type="text/css" href="interfazProlog.css">
 </head>
 <body>
 	<header>
-		<img id="logo" src="img/logo/swipl.png" alt="SWI Prolog logo">
-		<h1>CUENTA UN CUENTO</h1>
+		<div class = "logo">
+			<img src="img/logo/swipl.png" alt="SWI Prolog logo">
+		</div>
+
+		<div class = "titulo">
+			<h1>Cuenta un Cuento</h1>
+		</div>
+
+		<div class ="logo"></div>
+			
 	</header>
 	
 	<main class="flex-container">
 		<div class="flex-sides">
-		<h2>Entrada</h2>
+		<!-- <h2>Entrada</h2> -->
 			<form class="form" method="POST" action="servidor.php">
 
 				<div class="seleccion">
-					<b>Roles</b> <br>
-					<p>Seleccione al menos 2, pero no más de 4</p>
+					<p><b>Roles</b></p>
+					<!-- <p>Seleccione al menos 2, pero no más de 4</p> -->
 					<ul>
 						<li>
 							<input class="chk_individual" type="checkbox" name="rol1" id="rol1" value="hombre" checked>
@@ -44,8 +52,48 @@
 					</ul>
 				</div>
 
-				<!-- Contenedor para la galaría de imágenes -->
-				<b>Lugar</b> <br><br>
+				<div class="seleccion">
+					<b>Finales</b>
+					<ul>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="alegre" checked>
+								<img src="img/finales/alegre.png" alt="alegre">
+							</label>
+						</li>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="comico">
+								<img src="img/finales/comico.png" alt="comico">
+							</label>
+						</li>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="sorpresa">
+								<img src="img/finales/inesperado.png" alt="sorpresa">
+							</label>
+						</li>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="tragico">
+								<img src="img/finales/tragico.png" alt="tragico">
+							</label>
+						</li>
+						<li>
+							<label class="radioBtn">					
+								<input type="radio" name="final" value="triste">
+								<img src="img/finales/triste.png" alt="triste">
+							</label>
+						</li>
+					</ul>
+				</div>
+			</form>
+		</div>
+
+		<div class="flex-sides">	
+		<p><b>Lugar</b></p>
+			
+			<!-- Contenedor para la galaría de imágenes -->
 				<div class="container">
 
 				  <!-- Imagenes amplias con número -->
@@ -116,57 +164,19 @@
 				    	</label>
 				    </div>
 				  </div>
-				</div>
-				
-				<br>
-
-				<b>Finales</b> <br>
-				<div class="seleccion">
-					<ul>
-						<li>
-							<label class="radioBtn">					
-								<input type="radio" name="final" value="alegre" checked>
-								<img src="img/finales/alegre.png" alt="alegre">
-							</label>
-						</li>
-						<li>
-							<label class="radioBtn">					
-								<input type="radio" name="final" value="comico">
-								<img src="img/finales/comico.png" alt="comico">
-							</label>
-						</li>
-						<li>
-							<label class="radioBtn">					
-								<input type="radio" name="final" value="sorpresa">
-								<img src="img/finales/inesperado.png" alt="sorpresa">
-							</label>
-						</li>
-						<li>
-							<label class="radioBtn">					
-								<input type="radio" name="final" value="tragico">
-								<img src="img/finales/tragico.png" alt="tragico">
-							</label>
-						</li>
-						<li>
-							<label class="radioBtn">					
-								<input type="radio" name="final" value="triste">
-								<img src="img/finales/triste.png" alt="triste">
-							</label>
-						</li>
-					</ul>
-				</div>
-
+				  <br>
 				<div id="enviar">
 					<input class="olas" id="envio" type="submit" value="Enviar">
 				</div>
-			</form>
+				<button class="olas" id="puntocoma" url="">Historia alternativa</button>
+			</div>
 		</div>
 
-		<div class="flex-sides">	
-			<h2>Salida</h2>
+		<div class="flex-sides">
+			<p><b>Salida</b></p>
 			<textarea name="cuento" id="salida" cols="30" rows="10" readonly>Habia una vez...</textarea>
-			<button class="olas" id="puntocoma" url="">Historia alternativa</button>
 		</div>
+
 	</main>
 
 	<footer>
@@ -176,7 +186,6 @@
 		<b>Autores</b>	<br>
 		<div class="fila">
 			<div class="nombre">Hector Raul Gomez Aranda</div>
-			<div class="nombre">José Misael Guzman Toloza</div>
 			<div class="nombre">Jeni Karina Molina Puc</div>
 			<div class="nombre">Alejandro Gibran Pérez Pérez</div>	
 		</div>
