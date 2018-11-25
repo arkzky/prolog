@@ -1,23 +1,16 @@
 %personajes
 personaje(hombre,juan,principe).
-%personaje(hombre,juan,rey).
-%personaje(hombre,juan,cazador).
 
 personaje(mujer,maria,princesa).
-%personaje(mujer,maria,reina).
 
 personaje(villano, hombre_lobo, carnivoro).
-%personaje(villano,bruja,fea).
-%personaje(villano,ladron,malo).
 
-personaje(niño,miguel,valiente).
-%personaje(niño,miguel,temeroso).
+personaje(nino,miguel,valiente).
 
-%personaje(niña,rosita,timida).
-personaje(niña,rosita,curiosa).
+personaje(nina,rosita,curiosa).
 
 
-%para los lugares
+%lugares
 tiene_arboles(bosque).
 tiene_animales(bosque).
 asusta(bosque).
@@ -40,6 +33,51 @@ es_comico(comico).
 es_sorpresa(sorpresa).
 es_tragico(tragico).
 es_triste(triste).
+
+%% Hechos de acciones del personaje
+%hombre
+busca(hombre,tesoro).
+compra(hombre,espada).
+cazar(hombre,animales).
+
+explora(hombre,llanuras).
+encuentro_h(hombre,caballo).
+domar(hombre,caballo).
+
+%princesa
+es_infeliz(mujer).
+escapa2(mujer,hogar).
+regresa(mujer,hogar).
+
+se_pierde(mujer).
+hablar(mujer,animales).
+
+%villano
+planear(villano,estrategia).
+engañar(villano,habitantes).
+matar(villano,un_vagabundo).
+
+ataca(villano,entorno).
+roba(villano,comida).
+escapar(villano,comida).
+
+%nino
+encontrar(nino,pasaje_secreto).
+es_atacado(nino,goblins).
+escapo(nino,pasaje_secreto).
+
+encuentro(nino,espada).
+lastima(nino,animal).
+regresa_n(nino,casa).
+
+%nina
+entra(nina,lugar_extraño).
+perderse(nina,lugar_extraño).
+escapa(nina,lugar_extraño).
+
+encuentra(nina,amigo_misterioso).
+ayuda(nina,amigo).
+regreso(nina,hogar).
 
 /*Reglas Conocimiento Social*/
 
@@ -65,47 +103,42 @@ lugar(Lugar):-es_castillo(Lugar);
               es_desierto(Lugar);
               es_isla(Lugar).
 
-%etapas del cuento
-%
-% prueba(Hombre,Mujer,Villano,Niño,Lugar):-inicio(Hombre,Mujer,Lugar),inicio(Hombre,Mujer,Villano,Lugar),inicio(Hombre,Mujer,Villano,Niño,Lugar).
-%
-
 
 inicio(Rol1,Rol2,Rol3,Rol4,Lugar):-personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
                                               personaje(Rol3,hombre_lobo,carnivoro),
                                               personaje(Rol4,miguel,valiente),
-                                              write("Habia una vez un principe llamado juan, una princesa llamada maria quien vivia con un niño llamado miguel, los cuales vivian acechados por un hombre lobo, todos ellos vivian "),
+                                              write("Habia una vez un principe llamado juan, una princesa llamada maria quien vivia con un nino llamado miguel, los cuales vivian acechados por un hombre lobo, todos ellos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
                                               personaje(Rol3,hombre_lobo,carnivoro),
                                               personaje(Rol4,rosita,curiosa),
-                                              write("Habia una vez un principe llamado juan, una princesa llamada maria quien vivia con una niña llamada rosita, los cuales vivian acechados por un hombre lobo "),
+                                              write("Habia una vez un principe llamado juan, una princesa llamada maria quien vivia con una nina llamada rosita, los cuales vivian acechados por un hombre lobo "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
                                               personaje(Rol3,miguel,valiente),
                                               personaje(Rol4,rosita,curiosa),
-                                              write("Habia una vez un principe llamado juan, una princesa llamada maria quienes cuidaban 2 niños llamados miguel y rosita, los cuales vivian "),
+                                              write("Habia una vez un principe llamado juan, una princesa llamada maria quienes cuidaban 2 ninos llamados miguel y rosita, los cuales vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,hombre_lobo,carnivoro),
                                               personaje(Rol3,miguel,valiente),
                                               personaje(Rol4,rosita,curiosa),
-                                              write("Habia una vez un principe llamado juan quien vivia con un niño llamado miguel y  una niña llamada rosita, los cuales vivian acechados por un hombre lobo "),
+                                              write("Habia una vez un principe llamado juan quien vivia con un nino llamado miguel y  una nina llamada rosita, los cuales vivian acechados por un hombre lobo "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,maria,princesa),
                                               personaje(Rol2,hombre_lobo,carnivoro),
                                               personaje(Rol3,miguel,valiente),
                                               personaje(Rol4,rosita,curiosa),
-                                              write("Habia una vez una princesa llamada maria quien vivia con un niño llamado miguel y  una niña llamada rosita, los cuales vivian acechados por un hombre lobo "),
+                                              write("Habia una vez una princesa llamada maria quien vivia con un nino llamado miguel y  una nina llamada rosita, los cuales vivian acechados por un hombre lobo "),
                                               lugar(Lugar);
-%% 
+%%
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
                                               personaje(Rol3,hombre_lobo,carnivoro),
@@ -115,78 +148,78 @@ inicio(Rol1,Rol2,Rol3,Rol4,Lugar):-personaje(Rol1,juan,principe),
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
                                               personaje(Rol3,miguel,valiente),
-                                              write("Habia una vez un principe llamado juan y una princesa llamada maria, los cuales cuidaban un niño llamado miguel el cual era muy valiente, ellos vivian "),
+                                              write("Habia una vez un principe llamado juan y una princesa llamada maria, los cuales cuidaban un nino llamado miguel el cual era muy valiente, ellos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
                                               personaje(Rol3,rosita,curiosa),
-                                              write("Habia una vez un principe llamado juan y una princesa llamada maria, los cuales tenian una niña llamada rosita la cual era muy curiosa, ellos vivian "),
+                                              write("Habia una vez un principe llamado juan y una princesa llamada maria, los cuales tenian una nina llamada rosita la cual era muy curiosa, ellos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,hombre_lobo,carnivoro),
                                               personaje(Rol3,miguel,valiente),
-                                              write("Habia una vez un principe llamado juan, un niño llamado miguel el cual era muy valiente y ademas habia un hombre lobo, todos coexistiendo "),
+                                              write("Habia una vez un principe llamado juan, un nino llamado miguel el cual era muy valiente y ademas habia un hombre lobo, todos coexistiendo "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,hombre_lobo,carnivoro),
                                               personaje(Rol3,rosita,curiosa),
-                                              write("Habia una vez un principe llamado juan, una niña llamada rosita la cual era muy curiosa y ademas habia un hombre lobo, todos coexistiendo "),
+                                              write("Habia una vez un principe llamado juan, una nina llamada rosita la cual era muy curiosa y ademas habia un hombre lobo, todos coexistiendo "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,miguel,valiente),
                                               personaje(Rol3,rosita,curiosa),
-                                              write("Habia una vez un principe llamado juan, un niño llamado miguel y una niña llamada rosita, ellos vivian "),
+                                              write("Habia una vez un principe llamado juan, un nino llamado miguel y una nina llamada rosita, ellos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,maria,princesa),
                                               personaje(Rol2,hombre_lobo,carnivoro),
                                               personaje(Rol3,miguel,valiente),
-                                              write("Habia una vez una princesa llamada maria quien vivia con un niño llamado miguel y un villano que era un hombre lobo, ellos coexistian "),
+                                              write("Habia una vez una princesa llamada maria quien vivia con un nino llamado miguel y un villano que era un hombre lobo, ellos coexistian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,maria,princesa),
                                               personaje(Rol2,hombre_lobo,carnivoro),
                                               personaje(Rol3,rosita,curiosa),
-                                              write("Habia una vez una princesa llamada maria quien vivia con una niña llamada rosita y un villano que era un hombre lobo, ellos coexistian "),
+                                              write("Habia una vez una princesa llamada maria quien vivia con una nina llamada rosita y un villano que era un hombre lobo, ellos coexistian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,maria,princesa),
                                               personaje(Rol2,miguel,valiente),
                                               personaje(Rol3,rosita,curiosa),
-                                              write("Habia una vez una princesa llamada maria, un niño llamado juan y una niña llamada rosita, ellos vivian "),
+                                              write("Habia una vez una princesa llamada maria, un nino llamado juan y una nina llamada rosita, ellos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,hombre_lobo,carnivoro),
                                               personaje(Rol2,miguel,valiente),
                                               personaje(Rol3,rosita,curiosa),
-                                              write("Habia una vez 2 niños, uno llamado miguel y otra llamada rosita, ambos coexistian con un hombre lobo "),
+                                              write("Habia una vez 2 ninos, uno llamado miguel y otra llamada rosita, ambos coexistian con un hombre lobo "),
                                               lugar(Lugar);
-%% 
+%%
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,maria,princesa),
                                               write("Habia una vez una princesa llamada maria y un principe llamado juan, ambos vivian "),
                                               lugar(Lugar);
-                                              %write("prueba");
+                                              
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,hombre_lobo,carnivoro),
                                               write("Habia una vez un principe llamado juan y un villano despiada el cual era un hombre lobo, ambos coexistian "),
                                               lugar(Lugar);
-                                              %write("prueba2");
+                                              
 
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,miguel,valiente),
-                                              write("Habia una vez un principe llamado juan el cual cuidaba un niño llamado miguel, quien era muy valiente, ambos vivian "),
+                                              write("Habia una vez un principe llamado juan el cual cuidaba un nino llamado miguel, quien era muy valiente, ambos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,juan,principe),
                                               personaje(Rol2,rosita,curiosa),
-                                              write("Habia una vez un principe llamado juan el cual cuidaba una niña llamada rosita, quien era muy curiosa, ambos vivian "),
+                                              write("Habia una vez un principe llamado juan el cual cuidaba una nina llamada rosita, quien era muy curiosa, ambos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,maria,princesa),
@@ -196,26 +229,26 @@ inicio(Rol1,Rol2,Rol3,Rol4,Lugar):-personaje(Rol1,juan,principe),
 
                                               personaje(Rol1,maria,princesa),
                                               personaje(Rol2,miguel,valiente),
-                                              write("Habia una vez una princesa llamada maria y un pequeño niño llamado miguel, ambos vivian "),
+                                              write("Habia una vez una princesa llamada maria y un pequeño nino llamado miguel, ambos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,maria,princesa),
-                                              personaje(Rol2,rosita,curiosa),                                                             write("Habia una vez una princesa llamada maria y una niña llamada rosita la cual era muy curiosa, ambos vivian "),
+                                              personaje(Rol2,rosita,curiosa),                                                             write("Habia una vez una princesa llamada maria y una nina llamada rosita la cual era muy curiosa, ambos vivian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,hombre_lobo,carnivoro),
                                               personaje(Rol2,miguel,valiente),
-                                              write("Habia una vez un villano que era un hombre lobo y un pequeño niño llamado juan, quien era muy valiente, ambos coexistian "),
+                                              write("Habia una vez un villano que era un hombre lobo y un pequeño nino llamado juan, quien era muy valiente, ambos coexistian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,hombre_lobo,carnivoro),
                                               personaje(Rol2,rosita,curiosa),
-                                              write("Habia una vez un villano que era un hombre lobo y una pequeña niña llamada rosita, quien era muy curiosa, ambos coexistian "),
+                                              write("Habia una vez un villano que era un hombre lobo y una pequeña nina llamada rosita, quien era muy curiosa, ambos coexistian "),
                                               lugar(Lugar);
 
                                               personaje(Rol1,miguel,valiente),
                                               personaje(Rol2,rosita,curiosa),
-                                              write("Habia una vez 2 niños, uno llamado juan y otra llamada maria, ambos vivian "),
+                                              write("Habia una vez 2 ninos, uno llamado juan y otra llamada maria, ambos vivian "),
                                               lugar(Lugar).
 
 
@@ -288,7 +321,7 @@ tristeza(Rol1,Rol2,Rol3):-personaje(Rol1,juan,_),
 
                           personaje(Rol1,miguel,_),
                           personaje(Rol2,rosita,_),
-                          write("A pesar de todo lo que pasaron juntos, el niño decide dejar de ser amigo de la niña y se va con otra familia. Fin").
+                          write("A pesar de todo lo que pasaron juntos, el nino decide dejar de ser amigo de la nina y se va con otra familia. Fin").
 
 chiste(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,_,_),
                              not(personaje(Rol1,hombre_lobo,_)),
@@ -327,13 +360,13 @@ traicion(Rol1,Rol2,Rol3):-personaje(Rol1,_,_),
                      write("Parecia que el hombre habia ganado pero sin razon aparente se une con el villano y se convierte en un hombre lobo y destruyeron el lugar. Fin");
 
                      personaje(Rol1,miguel,_),
-                     write("Repentinamente el niño saca una pocion magica de su ropa y al beberla se convirtio en un dragon, ataco a todos y se fue volando. Fin");
+                     write("Repentinamente el nino saca una pocion magica de su ropa y al beberla se convirtio en un dragon, ataco a todos y se fue volando. Fin");
 
                      personaje(Rol2,miguel,_),
-                     write("Repentinamente el niño saca una pocion magica de su ropa y al beberla se convirtio en un dragon, ataco a todos y se fue volando.");
+                     write("Repentinamente el nino saca una pocion magica de su ropa y al beberla se convirtio en un dragon, ataco a todos y se fue volando.");
 
                      personaje(Rol3,miguel,_),
-                     write("Repentinamente el niño saca una pocion magica de su ropa y al beberla se convirtio en un dragon, ataco a todos y se fue volando. Fin").
+                     write("Repentinamente el nino saca una pocion magica de su ropa y al beberla se convirtio en un dragon, ataco a todos y se fue volando. Fin").
 
 
 
@@ -344,7 +377,7 @@ mueren(Rol1,Rol2):-personaje(Rol1,_,_),
                         write(" muere. Fin");
 
                         personaje(Rol2,_,_),
-                        not(personaje(Rol1,hombre_lobo,_)),
+                        not(personaje(Rol2,hombre_lobo,_)),
                         write("Todo parecia que iba bien, pero por azares del destino, el/la "),
                         write(Rol2),
                         write(" muere. Fin");
@@ -410,58 +443,58 @@ etapa1(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
 
                              personaje(Rol1,miguel,_),
                              encontrar(Rol1,pasaje_secreto),
-                             write(" El niño estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
+                             write(" El nino estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
 
                              personaje(Rol1,miguel,_),
                              encuentro(Rol1,espada),
-                             write(" El niño encontro una espada guardada muy bien bajo una apertura bajo tierra.");
+                             write(" El nino encontro una espada guardada muy bien bajo una apertura bajo tierra.");
 
                              personaje(Rol2,miguel,_),
                              encontrar(Rol2,pasaje_secreto),
-                             write(" El niño estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
+                             write(" El nino estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
 
                              personaje(Rol2,miguel,_),
                              encuentro(Rol2,espada),
-                             write(" El niño encontro una espada guardada muy bien bajo una apertura bajo tierra.");
+                             write(" El nino encontro una espada guardada muy bien bajo una apertura bajo tierra.");
 
                              personaje(Rol3,miguel,_),
                              encontrar(Rol3,pasaje_secreto),
-                             write(" El niño estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
+                             write(" El nino estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
 
                              personaje(Rol3,miguel,_),
                              encuentro(Rol3,espada),
-                             write(" El niño encontro una espada guardada muy bien bajo una apertura bajo tierra.");
+                             write(" El nino encontro una espada guardada muy bien bajo una apertura bajo tierra.");
 
                              personaje(Rol4,miguel,_),
                              encontrar(Rol4,pasaje_secreto),
-                             write(" El niño estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
+                             write(" El nino estaba paseando por el lugar y de repente encuentra un pasase secreto y decidio entrar en el a explorar.");
 
                              personaje(Rol4,miguel,_),
                              encuentro(Rol4,espada),
-                             write(" El niño encontro una espada guardada muy bien bajo una apertura bajo tierra.");
+                             write(" El nino encontro una espada guardada muy bien bajo una apertura bajo tierra.");
                              personaje(Rol2,rosita,_),
                              entra(Rol2,lugar_extraño),
-                             write(" La niña estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
+                             write(" La nina estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
 
                              personaje(Rol2,rosita,_),
                              encuentra(Rol2,amigo_misterioso),
-                             write(" La niña estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.");
+                             write(" La nina estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.");
 
                              personaje(Rol3,rosita,_),
                              entra(Rol3,lugar_extraño),
-                             write(" La niña estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
+                             write(" La nina estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
 
                              personaje(Rol3,rosita,_),
                              encuentra(Rol3,amigo_misterioso),
-                             write(" La niña estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.");
+                             write(" La nina estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.");
 
                              personaje(Rol4,rosita,_),
                              entra(Rol4,lugar_extraño),
-                             write(" La niña estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
+                             write(" La nina estaba paseando por el lugar y por accidente entro a un lugar misterioso.");
 
                              personaje(Rol4,rosita,_),
                              encuentra(Rol4,amigo_misterioso),
-                             write(" La niña estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.").
+                             write(" La nina estaba paseando por el lugar y encontro a un personaje misterioso quien se volvio su amigo rapidamente.").
 
 etapa2(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
                              compra(Rol1,espada),
@@ -489,7 +522,7 @@ etapa2(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
 
                              personaje(Rol1,hombre_lobo,_),
                              engañar(Rol1,habitantes),
-                             write(" Luego, en villano engaño a los habitantes para llevar a cabo su plan.");
+                             write(" Luego, el villano engaño a los habitantes para llevar a cabo su plan.");
 
                              personaje(Rol1,hombre_lobo,_),
                              roba(Rol1,comida),
@@ -513,35 +546,35 @@ etapa2(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
 
                              personaje(Rol1,miguel,_),
                              es_atacado(Rol1,goblins),
-                             write(" Luego, el niño fue atacado por unos goblins.");
+                             write(" Luego, el nino fue atacado por unos goblins.");
 
                              personaje(Rol1,miguel,_),
                              lastima(Rol1,animal),
-                             write(" Luego, el niño decidio usar la espada pero por accidente lastimo a un animal.");
+                             write(" Luego, el nino decidio usar la espada pero por accidente lastimo a un animal.");
 
                              personaje(Rol2,miguel,_),
                              es_atacado(Rol2,goblins),
-                             write(" Luego, el niño fue atacado por unos goblins.");
+                             write(" Luego, el nino fue atacado por unos goblins.");
 
                              personaje(Rol2,miguel,_),
                              lastima(Rol2,animal),
-                             write(" Luego, el niño decidio usar la espada pero por accidente lastimo a un animal.");
+                             write(" Luego, el nino decidio usar la espada pero por accidente lastimo a un animal.");
 
                              personaje(Rol3,miguel,_),
                              es_atacado(Rol3,goblins),
-                             write(" Luego, el niño fue atacado por unos goblins.");
+                             write(" Luego, el nino fue atacado por unos goblins.");
 
                              personaje(Rol3,miguel,_),
                              lastima(Rol3,animal),
-                             write(" Luego, el niño decidio usar la espada pero por accidente lastimo a un animal.");
+                             write(" Luego, el nino decidio usar la espada pero por accidente lastimo a un animal.");
 
                              personaje(Rol4,miguel,_),
                              es_atacado(Rol4,goblins),
-                             write(" Luego, el niño fue atacado por unos goblins.");
+                             write(" Luego, el nino fue atacado por unos goblins.");
 
                              personaje(Rol4,miguel,_),
                              lastima(Rol4,animal),
-                             write(" Luego, el niño decidio usar la espada pero por accidente lastimo a un animal.");
+                             write(" Luego, el nino decidio usar la espada pero por accidente lastimo a un animal.");
 
                              personaje(Rol2,rosita,_),
                              perderse(Rol2,lugar_extraño),
@@ -609,32 +642,32 @@ etapa3(Rol1,Rol2,Rol3,Rol4):-personaje(Rol1,juan,_),
 
                              personaje(Rol1,miguel,_),
                              escapo(Rol1,pasaje_secreto),
-                             write(" Despues, por suerte el niño pudo escapar del pasaje secreto.");
+                             write(" Despues, por suerte el nino pudo escapar del pasaje secreto.");
 
                              personaje(Rol1,miguel,_),
                              regresa_n(Rol1,casa),
-                             write(" Despues de lo que habia pasado, el niño decidio regresar a su casa.");
+                             write(" Despues de lo que habia pasado, el nino decidio regresar a su casa.");
                              personaje(Rol2,miguel,_),
                              escapo(Rol2,pasaje_secreto),
-                             write(" Despues, por suerte el niño pudo escapar del pasaje secreto.");
+                             write(" Despues, por suerte el nino pudo escapar del pasaje secreto.");
 
                              personaje(Rol2,miguel,_),
                              regresa_n(Rol2,casa),
-                             write(" Despues de lo que habia pasado, el niño decidio regresar a su casa.");
+                             write(" Despues de lo que habia pasado, el nino decidio regresar a su casa.");
                              personaje(Rol3,miguel,_),
                              escapo(Rol3,pasaje_secreto),
-                             write(" Despues, por suerte el niño pudo escapar del pasaje secreto.");
+                             write(" Despues, por suerte el nino pudo escapar del pasaje secreto.");
 
                              personaje(Rol3,miguel,_),
                              regresa_n(Rol3,casa),
-                             write(" Despues de lo que habia pasado, el niño decidio regresar a su casa.");
+                             write(" Despues de lo que habia pasado, el nino decidio regresar a su casa.");
                              personaje(Rol4,miguel,_),
                              escapo(Rol4,pasaje_secreto),
-                             write(" Despues, por suerte el niño pudo escapar del pasaje secreto.");
+                             write(" Despues, por suerte el nino pudo escapar del pasaje secreto.");
 
                              personaje(Rol4,miguel,_),
                              regresa_n(Rol4,casa),
-                             write(" Despues de lo que habia pasado, el niño decidio regresar a su casa.");
+                             write(" Despues de lo que habia pasado, el nino decidio regresar a su casa.");
                              personaje(Rol2,rosita,_),
                              escapa(Rol2,lugar_extraño),
                              write(" Despues, de estar en ese lugar logro escapar sana y salva.");
@@ -664,61 +697,6 @@ etapas(Rol1,Rol2,Rol3,Rol4):-etapa1(Rol1,Rol2,Rol3,Rol4),
                              etapa3(Rol1,Rol2,Rol3,Rol4).
 
 
-%% Hechos necesarios
-%hombre
-busca(hombre,tesoro).
-compra(hombre,espada).
-cazar(hombre,animales).
-
-explora(hombre,llanuras).
-encuentro_h(hombre,caballo).
-domar(hombre,caballo).
-
-%princesa
-es_infeliz(mujer).
-escapa2(mujer,hogar).
-regresa(mujer,hogar).
-
-se_pierde(mujer).
-hablar(mujer,animales).
-%regresa de nuevo
-%se_envenena(mujer,manzana_envenenada).
-
-%villano
-planear(villano,estrategia).
-engañar(villano,habitantes).
-matar(villano,un_vagabundo).
-
-ataca(villano,entorno).
-roba(villano,comida).
-escapar(villano,comida).
-
-
-
-%niño
-encontrar(niño,pasaje_secreto).
-es_atacado(niño,goblins).
-escapo(niño,pasaje_secreto).
-
-
-encuentro(niño,espada).
-lastima(niño,animal).
-regresa_n(niño,casa).
-%sale(niño,pasaje_secreto).
-
-%niña
-%posee(niña,espejo_magico).
-entra(niña,lugar_extraño).
-perderse(niña,lugar_extraño).
-escapa(niña,lugar_extraño).
-
-encuentra(niña,amigo_misterioso).
-ayuda(niña,amigo).
-regreso(niña,hogar).
-
-
-
-%cuento(Ro1,Rol2,Rol3,Rol4,Rol5)
 cuento(Rol1,Rol2,Rol3,Rol4,Lugar,Final):-inicio(Rol1,Rol2,Rol3,Rol4,Lugar),!,
                                                    etapa1(Rol1,Rol2,Rol3,Rol4),
                                                    etapa2(Rol1,Rol2,Rol3,Rol4),
@@ -736,20 +714,4 @@ cuento(Rol1,Rol2,Rol3,Rol4,Lugar,Final):-inicio(Rol1,Rol2,Rol3,Rol4,Lugar),!,
                                                     etapa1(Rol1,Rol2,Rol3,Rol4),
                                                     etapa2(Rol1,Rol2,Rol3,Rol4),
                                                     etapa3(Rol1,Rol2,Rol3,Rol4),
-%                                        etapa1(),
-%                                        etapa2(),
-%                                        etapa3(),
-                                        final(Rol1,Rol2,Rol3,Rol4,Final).
-%                                        2 hechos por etapa
-%
-% cuento(Hombre,Mujer,Villano,Niño,Niña,Lugar,Final):-inicio(Hombre,Mujer,Villano,Lugar),
-%
-                                                  %  final(Hombre,Mujer,Villano,Niño,Niña,Lugar,Final).
-
-% cuento(Hombre,Mujer,Villano,Niño,Niña,Lugar,Final):-inicio(Hombre,Mujer,Villano,Niño,Lugar),
-%
-                                                   % final(Hombre,Mujer,Villano,Niño,Niña,Lugar,Final).
-
-
-
-
+                                                    final(Rol1,Rol2,Rol3,Rol4,Final).
