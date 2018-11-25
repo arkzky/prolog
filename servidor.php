@@ -22,11 +22,11 @@
 	}
 	if(isset($_POST["rol4"]))
 	{
-		$rol4=",niño"; $i++;
+		$rol4=",nino"; $i++;
 	}
 	if(isset($_POST["rol5"]))
 	{
-		$rol5=",niña"; $i++;
+		$rol5=",nina"; $i++;
 	}
 	$instruccion = $rol1.$rol2.$rol3.$rol4.$rol5;
 
